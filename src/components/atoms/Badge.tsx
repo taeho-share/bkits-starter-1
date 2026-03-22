@@ -20,14 +20,14 @@ const variantStyles: Record<string, string> = {
 };
 
 const labelMap: Record<string, string> = {
-  high: '높음',
-  medium: '보통',
-  low: '낮음',
-  work: '업무',
-  personal: '개인',
-  health: '건강',
-  learning: '학습',
-  other: '기타',
+  high: 'High',
+  medium: 'Medium',
+  low: 'Low',
+  work: 'Work',
+  personal: 'Personal',
+  health: 'Health',
+  learning: 'Learning',
+  other: 'Other',
 };
 
 const iconMap: Record<string, React.ReactNode> = {

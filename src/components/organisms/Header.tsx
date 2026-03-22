@@ -10,7 +10,7 @@ export function Header() {
   const progress = total > 0 ? Math.round((completed / total) * 100) : 0;
 
   const now = new Date();
-  const dateStr = now.toLocaleDateString('ko-KR', {
+  const dateStr = now.toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
@@ -29,7 +29,7 @@ export function Header() {
         </div>
         <div className="text-right">
           <p className="text-2xl font-bold text-gray-900">{progress}%</p>
-          <p className="text-xs text-gray-400">완료율</p>
+          <p className="text-xs text-gray-400">Completed</p>
         </div>
       </div>
 
@@ -42,8 +42,8 @@ export function Header() {
       </div>
 
       <p className="text-xs text-gray-500">
-        전체 <strong className="text-gray-900">{total}개</strong> 중{' '}
-        <strong className="text-gray-900">{completed}개</strong> 완료
+        <strong className="text-gray-900">{completed}</strong> of{' '}
+        <strong className="text-gray-900">{total}</strong> tasks done
       </p>
     </header>
   );

@@ -1,8 +1,8 @@
 [
   {
     "id": "1",
-    "title": "프로젝트 기획안 작성",
-    "description": "Q2 로드맵 정리 및 팀 공유",
+    "title": "Write project proposal",
+    "description": "Q2 roadmap summary and team sharing",
     "priority": "high",
     "category": "work",
     "status": "todo",
@@ -11,8 +11,8 @@
   },
   {
     "id": "2",
-    "title": "운동 30분",
-    "description": "저녁 조깅 또는 홈트레이닝",
+    "title": "Exercise 30 minutes",
+    "description": "Evening jog or home workout",
     "priority": "medium",
     "category": "health",
     "status": "todo",
@@ -21,8 +21,8 @@
   },
   {
     "id": "3",
-    "title": "TypeScript 핸드북 읽기",
-    "description": "제네릭 챕터까지",
+    "title": "Read TypeScript handbook",
+    "description": "Up to the Generics chapter",
     "priority": "medium",
     "category": "learning",
     "status": "completed",
@@ -32,8 +32,8 @@
   },
   {
     "id": "4",
-    "title": "장보기",
-    "description": "우유, 계란, 채소",
+    "title": "Grocery shopping",
+    "description": "Milk, eggs, vegetables",
     "priority": "low",
     "category": "personal",
     "status": "todo",
@@ -42,8 +42,8 @@
   },
   {
     "id": "5",
-    "title": "이메일 답장",
-    "description": "미팅 일정 확인 및 회신",
+    "title": "Reply to emails",
+    "description": "Confirm meeting schedule and respond",
     "priority": "high",
     "category": "work",
     "status": "completed",

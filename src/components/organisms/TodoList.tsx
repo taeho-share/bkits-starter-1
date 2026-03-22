@@ -9,12 +9,12 @@ import { Category } from '@/domain/entities/todo';
 type TabType = 'today' | 'upcoming' | 'completed';
 
 const categoryLabels: Record<Category | 'all', string> = {
-  all: '전체',
-  work: '업무',
-  personal: '개인',
-  health: '건강',
-  learning: '학습',
-  other: '기타',
+  all: 'All',
+  work: 'Work',
+  personal: 'Personal',
+  health: 'Health',
+  learning: 'Learning',
+  other: 'Other',
 };
 
 export function TodoList() {
@@ -54,9 +54,9 @@ export function TodoList() {
   }), [todos, todayStr]);
 
   const tabs: { key: TabType; label: string }[] = [
-    { key: 'today', label: '오늘' },
-    { key: 'upcoming', label: '예정' },
-    { key: 'completed', label: '완료' },
+    { key: 'today', label: 'Today' },
+    { key: 'upcoming', label: 'Upcoming' },
+    { key: 'completed', label: 'Completed' },
   ];
 
   return (
@@ -111,7 +111,7 @@ export function TodoList() {
               {tab === 'completed' ? '🎉' : '✨'}
             </p>
             <p className="text-sm">
-              {tab === 'completed' ? '완료된 항목이 없어요' : '할일이 없어요!'}
+              {tab === 'completed' ? 'No completed tasks yet' : 'No tasks here!'}
             </p>
           </div>
         ) : (

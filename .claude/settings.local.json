@@ -1,23 +1,32 @@
 {
   "permissions": {
     "allow": [
-      "Read(//tmp/**)",
-      "Bash(npx create-next-app@latest todo-app --typescript --tailwind --eslint --app --src-dir --use-pnpm --no-turbopack --import-alias \"@/*\" --yes)",
-      "Bash(npx create-next-app@latest todo-app --typescript --tailwind --eslint --app --src-dir --use-npm --no-turbopack --import-alias \"@/*\" --yes)",
-      "Bash(rm -rf /tmp/claude-project-1774194443)",
-      "Bash(mkdir -p /tmp/claude-project-1774194443)",
-      "Bash(cp:*)",
-      "Bash(cp /tmp/claude-project-1774194443/todo-app/README.md /c/workspace/gatchlycom/)",
-      "Bash(cp /tmp/claude-project-1774194443/todo-app/eslint.config.mjs /c/workspace/gatchlycom/)",
-      "Bash(cp /tmp/claude-project-1774194443/todo-app/next-env.d.ts /c/workspace/gatchlycom/)",
-      "Bash(cp /tmp/claude-project-1774194443/todo-app/next.config.ts /c/workspace/gatchlycom/)",
-      "Bash(cp /tmp/claude-project-1774194443/todo-app/package.json /c/workspace/gatchlycom/)",
+      "Bash(npm run:*)",
       "Bash(npm install:*)",
-      "Bash(git init:*)",
-      "Bash(git add:*)",
-      "Bash(git commit -m \"feat: 미니멀 개인용 할일 관리 앱 초기 설정:*)",
-      "Bash(git config:*)",
-      "Bash(git commit:*)"
+      "Bash(npm install *)",
+      "Bash(npx tsc:*)",
+      "Bash(git *)",
+      "Read(/tmp/**)",
+      "Bash(gh auth:*)",
+      "Bash(git ls-remote:*)",
+      "Bash(git remote:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)"
+    ],
+    "deny": [],
+    "ask": []
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd /c/workspace/gatchlycom && npx tsc --noEmit 2>&1 | head -20 || true"
+          }
+        ]
+      }
     ]
   }
 }

@@ -31,7 +31,7 @@ export function AddTodoForm() {
     return (
       <Button onClick={() => setIsOpen(true)} className="w-full justify-center gap-2">
         <Plus className="w-4 h-4" />
-        할일 추가
+        Add Task
       </Button>
     );
   }
@@ -41,14 +41,14 @@ export function AddTodoForm() {
       <input
         autoFocus
         type="text"
-        placeholder="무엇을 할 건가요?"
+        placeholder="What needs to be done?"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         className="w-full text-sm font-medium outline-none placeholder-gray-400"
       />
       <input
         type="text"
-        placeholder="설명 (선택)"
+        placeholder="Description (optional)"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
         className="w-full text-xs text-gray-600 outline-none placeholder-gray-400"
@@ -59,20 +59,20 @@ export function AddTodoForm() {
           onChange={(e) => setPriority(e.target.value as Priority)}
           className="text-xs border border-gray-200 rounded-lg px-2 py-1 outline-none"
         >
-          <option value="high">높은 우선순위</option>
-          <option value="medium">보통 우선순위</option>
-          <option value="low">낮은 우선순위</option>
+          <option value="high">High priority</option>
+          <option value="medium">Medium priority</option>
+          <option value="low">Low priority</option>
         </select>
         <select
           value={category}
           onChange={(e) => setCategory(e.target.value as Category)}
           className="text-xs border border-gray-200 rounded-lg px-2 py-1 outline-none"
         >
-          <option value="work">업무</option>
-          <option value="personal">개인</option>
-          <option value="health">건강</option>
-          <option value="learning">학습</option>
-          <option value="other">기타</option>
+          <option value="work">Work</option>
+          <option value="personal">Personal</option>
+          <option value="health">Health</option>
+          <option value="learning">Learning</option>
+          <option value="other">Other</option>
         </select>
         <input
           type="date"
@@ -83,7 +83,7 @@ export function AddTodoForm() {
       </div>
       <div className="flex gap-2 pt-1">
         <Button type="submit" size="sm" disabled={!title.trim()}>
-          추가
+          Add
         </Button>
         <Button
           type="button"
@@ -92,7 +92,7 @@ export function AddTodoForm() {
           onClick={() => setIsOpen(false)}
         >
           <X className="w-3.5 h-3.5" />
-          취소
+          Cancel
         </Button>
       </div>
     </form>

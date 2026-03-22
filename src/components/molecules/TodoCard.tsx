@@ -59,7 +59,7 @@ export function TodoCard({ todo }: TodoCardProps) {
         />
         <input
           type="text"
-          placeholder="설명 (선택)"
+          placeholder="Description (optional)"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           className="w-full text-xs text-gray-600 outline-none placeholder-gray-400"
@@ -70,20 +70,20 @@ export function TodoCard({ todo }: TodoCardProps) {
             onChange={(e) => setPriority(e.target.value as Priority)}
             className="text-xs border border-gray-200 rounded-lg px-2 py-1 outline-none"
           >
-            <option value="high">높은 우선순위</option>
-            <option value="medium">보통 우선순위</option>
-            <option value="low">낮은 우선순위</option>
+            <option value="high">High priority</option>
+            <option value="medium">Medium priority</option>
+            <option value="low">Low priority</option>
           </select>
           <select
             value={category}
             onChange={(e) => setCategory(e.target.value as Category)}
             className="text-xs border border-gray-200 rounded-lg px-2 py-1 outline-none"
           >
-            <option value="work">업무</option>
-            <option value="personal">개인</option>
-            <option value="health">건강</option>
-            <option value="learning">학습</option>
-            <option value="other">기타</option>
+            <option value="work">Work</option>
+            <option value="personal">Personal</option>
+            <option value="health">Health</option>
+            <option value="learning">Learning</option>
+            <option value="other">Other</option>
           </select>
           <input
             type="date"
@@ -95,11 +95,11 @@ export function TodoCard({ todo }: TodoCardProps) {
         <div className="flex gap-2">
           <Button size="sm" onClick={handleSave} disabled={!title.trim()}>
             <Check className="w-3.5 h-3.5" />
-            저장
+            Save
           </Button>
           <Button size="sm" variant="ghost" onClick={handleCancel}>
             <X className="w-3.5 h-3.5" />
-            취소
+            Cancel
           </Button>
         </div>
       </div>
@@ -123,7 +123,7 @@ export function TodoCard({ todo }: TodoCardProps) {
             ? 'bg-gray-900 border-gray-900 flex items-center justify-center'
             : 'border-gray-300 hover:border-gray-900'
         )}
-        aria-label="완료 토글"
+        aria-label="Toggle complete"
       >
         {todo.status === 'completed' && (
           <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -168,7 +168,7 @@ export function TodoCard({ todo }: TodoCardProps) {
             size="sm"
             onClick={() => setIsEditing(true)}
             className="text-gray-400 hover:text-gray-700 p-1"
-            aria-label="수정"
+            aria-label="Edit"
           >
             <Pencil className="w-4 h-4" />
           </Button>
