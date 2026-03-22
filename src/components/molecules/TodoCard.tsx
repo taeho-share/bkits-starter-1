@@ -1,10 +1,11 @@
 'use client';
 
-import { Todo } from '@/domain/entities/todo';
+import { useState } from 'react';
+import { Todo, Priority, Category } from '@/domain/entities/todo';
 import { Badge } from '@/components/atoms/Badge';
 import { Button } from '@/components/atoms/Button';
 import { useTodoStore } from '@/application/store/todoStore';
-import { Trash2, Calendar } from 'lucide-react';
+import { Trash2, Calendar, Pencil, Check, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface TodoCardProps {
@@ -12,12 +13,98 @@ interface TodoCardProps {
 }
 
 export function TodoCard({ todo }: TodoCardProps) {
-  const { toggleTodo, deleteTodo } = useTodoStore();
+  const { toggleTodo, deleteTodo, updateTodo } = useTodoStore();
+  const [isEditing, setIsEditing] = useState(false);
+  const [title, setTitle] = useState(todo.title);
+  const [description, setDescription] = useState(todo.description ?? '');
+  const [priority, setPriority] = useState<Priority>(todo.priority);
+  const [category, setCategory] = useState<Category>(todo.category);
+  const [dueDate, setDueDate] = useState(todo.dueDate ?? '');
 
   const isOverdue =
     todo.dueDate &&
     todo.status === 'todo' &&
     new Date(todo.dueDate) < new Date(new Date().toDateString());
+
+  const handleSave = () => {
+    if (!title.trim()) return;
+    updateTodo(todo.id, {
+      title: title.trim(),
+      description: description || undefined,
+      priority,
+      category,
+      dueDate: dueDate || undefined,
+    });
+    setIsEditing(false);
+  };
+
+  const handleCancel = () => {
+    setTitle(todo.title);
+    setDescription(todo.description ?? '');
+    setPriority(todo.priority);
+    setCategory(todo.category);
+    setDueDate(todo.dueDate ?? '');
+    setIsEditing(false);
+  };
+
+  if (isEditing) {
+    return (
+      <div className="bg-white border border-gray-300 rounded-xl p-4 space-y-3 shadow-sm">
+        <input
+          autoFocus
+          type="text"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          className="w-full text-sm font-medium outline-none border-b border-gray-200 pb-1"
+        />
+        <input
+          type="text"
+          placeholder="설명 (선택)"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+          className="w-full text-xs text-gray-600 outline-none placeholder-gray-400"
+        />
+        <div className="flex flex-wrap gap-2">
+          <select
+            value={priority}
+            onChange={(e) => setPriority(e.target.value as Priority)}
+            className="text-xs border border-gray-200 rounded-lg px-2 py-1 outline-none"
+          >
+            <option value="high">높은 우선순위</option>
+            <option value="medium">보통 우선순위</option>
+            <option value="low">낮은 우선순위</option>
+          </select>
+          <select
+            value={category}
+            onChange={(e) => setCategory(e.target.value as Category)}
+            className="text-xs border border-gray-200 rounded-lg px-2 py-1 outline-none"
+          >
+            <option value="work">업무</option>
+            <option value="personal">개인</option>
+            <option value="health">건강</option>
+            <option value="learning">학습</option>
+            <option value="other">기타</option>
+          </select>
+          <input
+            type="date"
+            value={dueDate}
+            onChange={(e) => setDueDate(e.target.value)}
+            className="text-xs border border-gray-200 rounded-lg px-2 py-1 outline-none text-gray-600"
+          />
+        </div>
+        <div className="flex gap-2">
+          <Button size="sm" onClick={handleSave} disabled={!title.trim()}>
+            <Check className="w-3.5 h-3.5" />
+            저장
+          </Button>
+          <Button size="sm" variant="ghost" onClick={handleCancel}>
+            <X className="w-3.5 h-3.5" />
+            취소
+          </Button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div
@@ -74,15 +161,28 @@ export function TodoCard({ todo }: TodoCardProps) {
         </div>
       </div>
 
-      <Button
-        variant="ghost"
-        size="sm"
-        onClick={() => deleteTodo(todo.id)}
-        className="opacity-0 group-hover:opacity-100 transition-opacity text-gray-400 hover:text-red-500 p-1"
-        aria-label="삭제"
-      >
-        <Trash2 className="w-4 h-4" />
-      </Button>
+      <div className="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+        {todo.status !== 'completed' && (
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => setIsEditing(true)}
+            className="text-gray-400 hover:text-gray-700 p-1"
+            aria-label="수정"
+          >
+            <Pencil className="w-4 h-4" />
+          </Button>
+        )}
+        <Button
+          variant="ghost"
+          size="sm"
+          onClick={() => deleteTodo(todo.id)}
+          className="text-gray-400 hover:text-red-500 p-1"
+          aria-label="삭제"
+        >
+          <Trash2 className="w-4 h-4" />
+        </Button>
+      </div>
     </div>
   );
 }

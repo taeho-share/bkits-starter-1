@@ -1,3 +1,4 @@
+import { Briefcase, User, Heart, BookOpen, Tag, AlertCircle, Minus, ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface BadgeProps {
@@ -29,15 +30,28 @@ const labelMap: Record<string, string> = {
   other: '기타',
 };
 
+const iconMap: Record<string, React.ReactNode> = {
+  work: <Briefcase className="w-3 h-3" />,
+  personal: <User className="w-3 h-3" />,
+  health: <Heart className="w-3 h-3" />,
+  learning: <BookOpen className="w-3 h-3" />,
+  other: <Tag className="w-3 h-3" />,
+  high: <AlertCircle className="w-3 h-3" />,
+  medium: <Minus className="w-3 h-3" />,
+  low: <ChevronDown className="w-3 h-3" />,
+};
+
 export function Badge({ label, variant = 'default', className }: BadgeProps) {
+  const icon = iconMap[label];
   return (
     <span
       className={cn(
-        'inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium',
+        'inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium',
         variantStyles[variant] || variantStyles.default,
         className
       )}
     >
+      {icon}
       {labelMap[label] || label}
     </span>
   );
