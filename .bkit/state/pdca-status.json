@@ -1,0 +1,201 @@
+{
+  "version": "3.0",
+  "lastUpdated": "2026-03-22T15:52:58.333Z",
+  "activeFeatures": [
+    "entities",
+    "store",
+    "gatchlycom",
+    "atoms",
+    "molecules",
+    "organisms",
+    "templates"
+  ],
+  "primaryFeature": "entities",
+  "features": {
+    "entities": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-22T15:51:26.994Z",
+        "lastUpdated": "2026-03-22T15:51:26.994Z"
+      },
+      "lastFile": "/c/workspace/gatchlycom/src/domain/entities/todo.ts"
+    },
+    "store": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-22T15:51:41.751Z",
+        "lastUpdated": "2026-03-22T15:51:41.751Z"
+      },
+      "lastFile": "/c/workspace/gatchlycom/src/application/store/todoStore.ts"
+    },
+    "gatchlycom": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-22T15:51:44.604Z",
+        "lastUpdated": "2026-03-22T15:52:58.333Z"
+      },
+      "lastFile": "/c/workspace/gatchlycom/src/app/page.tsx"
+    },
+    "atoms": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-22T15:51:50.997Z",
+        "lastUpdated": "2026-03-22T15:51:57.638Z"
+      },
+      "lastFile": "/c/workspace/gatchlycom/src/components/atoms/Button.tsx"
+    },
+    "molecules": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-22T15:52:09.868Z",
+        "lastUpdated": "2026-03-22T15:52:20.364Z"
+      },
+      "lastFile": "/c/workspace/gatchlycom/src/components/molecules/AddTodoForm.tsx"
+    },
+    "organisms": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-22T15:52:34.935Z",
+        "lastUpdated": "2026-03-22T15:52:43.260Z"
+      },
+      "lastFile": "/c/workspace/gatchlycom/src/components/organisms/Header.tsx"
+    },
+    "templates": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-22T15:52:46.097Z",
+        "lastUpdated": "2026-03-22T15:52:46.097Z"
+      },
+      "lastFile": "/c/workspace/gatchlycom/src/components/templates/MainLayout.tsx"
+    }
+  },
+  "pipeline": {
+    "currentPhase": 1,
+    "level": "Dynamic",
+    "phaseHistory": []
+  },
+  "session": {
+    "startedAt": "2026-03-22T15:35:59.263Z",
+    "onboardingCompleted": false,
+    "lastActivity": "2026-03-22T15:52:58.333Z"
+  },
+  "history": [
+    {
+      "timestamp": "2026-03-22T15:51:26.994Z",
+      "feature": "entities",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-22T15:51:41.751Z",
+      "feature": "store",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-22T15:51:44.604Z",
+      "feature": "gatchlycom",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-22T15:51:50.997Z",
+      "feature": "atoms",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-22T15:51:57.638Z",
+      "feature": "atoms",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-22T15:52:09.868Z",
+      "feature": "molecules",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-22T15:52:20.364Z",
+      "feature": "molecules",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-22T15:52:34.935Z",
+      "feature": "organisms",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-22T15:52:43.260Z",
+      "feature": "organisms",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-22T15:52:46.097Z",
+      "feature": "templates",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-22T15:52:58.333Z",
+      "feature": "gatchlycom",
+      "phase": "do",
+      "action": "updated"
+    }
+  ],
+  "stateMachine": {
+    "defaultWorkflow": "default",
+    "activeWorkflows": {},
+    "totalTransitions": 0
+  },
+  "automation": {
+    "globalLevel": 2,
+    "trustScore": 40,
+    "pendingApprovals": 0,
+    "lastGateResult": null
+  },
+  "team": {
+    "enabled": true,
+    "stateFile": ".bkit/runtime/agent-state.json",
+    "eventsFile": ".bkit/runtime/agent-events.jsonl"
+  }
+}

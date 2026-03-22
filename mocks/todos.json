@@ -1,0 +1,53 @@
+[
+  {
+    "id": "1",
+    "title": "프로젝트 기획안 작성",
+    "description": "Q2 로드맵 정리 및 팀 공유",
+    "priority": "high",
+    "category": "work",
+    "status": "todo",
+    "dueDate": "2026-03-25",
+    "createdAt": "2026-03-22T09:00:00Z"
+  },
+  {
+    "id": "2",
+    "title": "운동 30분",
+    "description": "저녁 조깅 또는 홈트레이닝",
+    "priority": "medium",
+    "category": "health",
+    "status": "todo",
+    "dueDate": "2026-03-22",
+    "createdAt": "2026-03-22T08:00:00Z"
+  },
+  {
+    "id": "3",
+    "title": "TypeScript 핸드북 읽기",
+    "description": "제네릭 챕터까지",
+    "priority": "medium",
+    "category": "learning",
+    "status": "completed",
+    "dueDate": "2026-03-22",
+    "createdAt": "2026-03-21T10:00:00Z",
+    "completedAt": "2026-03-22T14:30:00Z"
+  },
+  {
+    "id": "4",
+    "title": "장보기",
+    "description": "우유, 계란, 채소",
+    "priority": "low",
+    "category": "personal",
+    "status": "todo",
+    "dueDate": "2026-03-23",
+    "createdAt": "2026-03-22T07:00:00Z"
+  },
+  {
+    "id": "5",
+    "title": "이메일 답장",
+    "description": "미팅 일정 확인 및 회신",
+    "priority": "high",
+    "category": "work",
+    "status": "completed",
+    "createdAt": "2026-03-22T09:30:00Z",
+    "completedAt": "2026-03-22T10:00:00Z"
+  }
+]
